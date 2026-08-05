@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-05-30T18:15:39.358Z",
+  "wintemList": [
+    {
+      "type": "WINTEM",
+      "level": "FL20-100",
+      "zone": "FRANCE",
+      "date": "31 05 2026 03:00",
+      "expiration": "31 05 2026 03:00",
+      "deadline": "03 UTC",
+      "link": "https://aviation.meteo.fr/FR/aviation/affiche_image.php?login=JETON_METEO_FRANCE_A_RENSEIGNER&layer=wintemp%2Ffr%2Ffrance%2Ffl020&echeance=20260531030000"
+    },
+    {
+      "type": "WINTEM",
+      "level": "FL20-100",
+      "zone": "FRANCE",
+      "date": "31 05 2026 00:00",
+      "expiration": "31 05 2026 00:00",
+      "deadline": "00 UTC",
+      "link": "https://aviation.meteo.fr/FR/aviation/affiche_image.php?login=JETON_METEO_FRANCE_A_RENSEIGNER&layer=wintemp%2Ffr%2Ffrance%2Ffl020&echeance=20260531000000"
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "icing": {
+    "dpd": 24,
+    "thresholds": {
+      "cruise": {
+        "serious": 2.2,
+        "moderate": 4.833333333333333,
+        "light": 7
+      },
+      "descent": {
+        "serious": 3,
+        "moderate": 7.333333333333333,
+        "light": 9.125
+      },
+      "anyPower": 1.5
+    },
+    "riskCruise": "none",
+    "riskDescent": "none",
+    "anyPower": false,
+    "overall": "none",
+    "notes": "Hors des zones principales de l’abaque.",
+    "color": "green",
+    "overallText": "absent"
+  },
+  "current": {
+    "wind_speed": 6,
+    "wind_gust": null,
+    "wind_direction": 80,
+    "visibility": 9999,
+    "ceiling": "CAVOK",
+    "precip": null,
+    "qnh": 1016,
+    "temp": 32,
+    "dew_temp": 8,
+    "confidence": 90,
+    "summary": "Les conditions météorologiques sont idéales pour le vol à vue (VFR) avec une visibilité parfaite et aucun nuage significatif. Profitez de ces conditions claires pour un vol agréable. Aucune menace significative n'est prévue, mais restez vigilant aux changements éventuels du vent. Prévoyez une bonne hydratation en raison des températures élevées. N'oubliez pas vos lunettes de soleil, car le ciel est plus dégagé que la piste de danse d'un pilote ! ☀️😎"
+  },
+  "forecast_6h": {
+    "wind_speed": 8,
+    "wind_gust": null,
+    "wind_direction": 90,
+    "visibility": 9999,
+    "ceiling": "CAVOK",
+    "precip": null,
+    "qnh_trend": "stable",
+    "confidence": 85,
+    "alt_scn": [
+      {
+        "summary": "Les conditions devraient rester stables avec une légère augmentation de la vitesse du vent. Aucune précipitation n'est attendue et la visibilité devrait rester excellente.",
+        "confidence": 85
+      }
+    ]
+  },
+  "forecast_24h": {
+    "alt_scn": [
+      {
+        "summary": "Les conditions météorologiques devraient rester favorables pour le vol à vue (VFR) avec une visibilité excellente et aucun nuage significatif. Une légère augmentation de la vitesse du vent est possible, mais aucune précipitation n'est attendue.",
+        "confidence": 80
+      }
+    ]
+  },
+  "key_points": {
+    "metar": [
+      "Les METAR indiquent des conditions CAVOK pour tous les aéroports environnants, avec des vents légers et variables.",
+      "Les températures sont élevées, autour de 30-33°C, avec des points de rosée relativement bas, indiquant un air sec.",
+      "La pression atmosphérique est stable autour de 1015-1017 hPa."
+    ],
+    "taf": [
+      "Les TAF prévoient des conditions CAVOK pour les prochaines 24 heures, avec des vents légers et variables.",
+      "Une légère augmentation de la vitesse du vent est prévue pour Rennes (LFRN) en fin de période."
+    ]
+  },
+  "metar": [
+    {
+      "icaoId": "LFRS",
+      "receiptTime": "2026-06-14T16:02:51.229Z",
+      "obsTime": 1781452800,
+      "reportTime": "2026-06-14T16:00:00.000Z",
+      "temp": 33,
+      "dewp": 6,
+      "wdir": 70,
+      "wspd": 7,
+      "visib": "6+",
+      "altim": 1015,
+      "qcField": 18,
+      "metarType": "METAR",
+      "rawOb": "METAR LFRS 141600Z AUTO 07007KT 040V120 CAVOK 33/06 Q1015 NOSIG",
+      "lat": 47.15,
+      "lon": -1.609,
+      "elev": 26,
+      "name": "Nantes/Atlantique Arpt, PD, FR",
+      "cover": "CAVOK",
+      "clouds": [],
+      "fltCat": "VFR",
+      "visibMetre": 9999
+    },
+    {
+      "icaoId": "LFRZ",
+      "receiptTime": "2026-06-14T16:02:49.113Z",
+      "obsTime": 1781452800,
+      "reportTime": "2026-06-14T16:00:00.000Z",
+      "temp": 33,
+      "dewp": 6,
+      "wdir": 100,
+      "wspd": 5,
+      "visib": "6+",
+      "altim": 1016,
+      "qcField": 18,
+      "metarType": "METAR",
+      "rawOb": "METAR LFRZ 141600Z AUTO 10005KT 360V170 CAVOK 33/06 Q1016 NOSIG",
+      "lat": 47.312,
+      "lon": -2.163,
+      "elev": 2,
+      "name": "St Nazaire/Montoir Arpt, PD, FR",
+      "cover": "CAVOK",
+      "clouds": [],
+      "fltCat": "VFR",
+      "visibMetre": 9999
+    },
+    {
+      "icaoId": "LFRN",
+      "receiptTime": "2026-06-14T16:02:48.216Z",
+      "obsTime": 1781452800,
+      "reportTime": "2026-06-14T16:00:00.000Z",
+      "temp": 31,
+      "dewp": 10,
+      "wdir": "VRB",
+      "wspd": 3,
+      "visib": "6+",
+      "altim": 1017,
+      "qcField": 18,
+      "metarType": "METAR",
+      "rawOb": "METAR LFRN 141600Z AUTO VRB03KT CAVOK 31/10 Q1017 NOSIG",
+      "lat": 48.069,
+      "lon": -1.734,
+      "elev": 35,
+      "name": "Rennes/St Jacques Arpt, BR, FR",
+      "cover": "CAVOK",
+      "clouds": [],
+      "fltCat": "VFR",
+      "visibMetre": 9999
+    },
+    {
+      "icaoId": "LFOV",
+      "receiptTime": "2026-06-14T16:02:49.005Z",
+      "obsTime": 1781452800,
+      "reportTime": "2026-06-14T16:00:00.000Z",
+      "temp": 30,
+      "dewp": 11,
+      "wdir": 100,
+      "wspd": 5,
+      "visib": "6+",
+      "altim": 1017,
+      "qcField": 2,
+      "metarType": "METAR",
+      "rawOb": "METAR LFOV 141600Z AUTO 10005KT 060V150 CAVOK 30/11 Q1017",
+      "lat": 48.031,
+      "lon": -0.746,
+      "elev": 99,
+      "name": "Laval/Entrammes Arpt, PD, FR",
+      "cover": "CAVOK",
+      "clouds": [],
+      "fltCat": "VFR",
+      "visibMetre": 9999
+    },
+    {
+      "icaoId": "LFJR",
+      "receiptTime": "2026-06-14T16:02:48.588Z",
+      "obsTime": 1781452800,
+      "reportTime": "2026-06-14T16:00:00.000Z",
+      "temp": 31,
+      "dewp": 10,
+      "wdir": 80,
+      "wspd": 5,
+      "visib": "6+",
+      "altim": 1017,
+      "qcField": 2,
+      "metarType": "METAR",
+      "rawOb": "METAR LFJR 141600Z AUTO 08005KT 010V140 CAVOK 31/10 Q1017",
+      "lat": 47.562,
+      "lon": -0.317,
+      "elev": 50,
+      "name": "Anger/Loire Arpt, PD, FR",
+      "cover": "CAVOK",
+      "clouds": [],
+      "fltCat": "VFR",
+      "visibMetre": 9999
+    }
+  ],
+  "taf": [
+    {
+      "icaoId": "LFRS",
+      "dbPopTime": "2026-06-14T11:20:27.818Z",
+      "bulletinTime": "2026-06-14T11:00:00.000Z",
+      "issueTime": "2026-06-14T11:00:00.000Z",
+      "validTimeFrom": 1781438400,
+      "validTimeTo": 1781546400,
+      "rawTAF": "TAF LFRS 141100Z 1412/1518 06008KT CAVOK",
+      "mostRecent": 1,
+      "remarks": "",
+      "lat": 47.15,
+      "lon": -1.609,
+      "elev": 26,
+      "prior": 3,
+      "name": "Nantes/Atlantique Arpt",
+      "fcsts": [
+        {
+          "timeFrom": 1781438400,
+          "timeTo": 1781546400,
+          "timeBec": null,
+          "fcstChange": null,
+          "probability": null,
+          "wdir": 60,
+          "wspd": 8,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": "6+",
+          "altim": null,
+          "vertVis": null,
+          "wxString": "NSW",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "NSC",
+              "base": null,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        }
+      ]
+    },
+    {
+      "icaoId": "LFRZ",
+      "dbPopTime": "2026-06-14T11:20:28.872Z",
+      "bulletinTime": "2026-06-14T11:00:00.000Z",
+      "issueTime": "2026-06-14T11:00:00.000Z",
+      "validTimeFrom": 1781438400,
+      "validTimeTo": 1781524800,
+      "rawTAF": "TAF LFRZ 141100Z 1412/1512 09008KT CAVOK",
+      "mostRecent": 1,
+      "remarks": "",
+      "lat": 47.312,
+      "lon": -2.163,
+      "elev": 2,
+      "prior": 5,
+      "name": "St Nazaire/Montoir Arpt",
+      "fcsts": [
+        {
+          "timeFrom": 1781438400,
+          "timeTo": 1781524800,
+          "timeBec": null,
+          "fcstChange": null,
+          "probability": null,
+          "wdir": 90,
+          "wspd": 8,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": "6+",
+          "altim": null,
+          "vertVis": null,
+          "wxString": "NSW",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "NSC",
+              "base": null,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        }
+      ]
+    },
+    {
+      "icaoId": "LFRN",
+      "dbPopTime": "2026-06-14T11:20:27.923Z",
+      "bulletinTime": "2026-06-14T11:00:00.000Z",
+      "issueTime": "2026-06-14T11:00:00.000Z",
+      "validTimeFrom": 1781438400,
+      "validTimeTo": 1781524800,
+      "rawTAF": "TAF LFRN 141100Z 1412/1512 VRB05KT CAVOK BECMG 1509/1512 20010KT",
+      "mostRecent": 1,
+      "remarks": "",
+      "lat": 48.069,
+      "lon": -1.734,
+      "elev": 35,
+      "prior": 2,
+      "name": "Rennes/St Jacques Arpt",
+      "fcsts": [
+        {
+          "timeFrom": 1781438400,
+          "timeTo": 1781514000,
+          "timeBec": null,
+          "fcstChange": null,
+          "probability": null,
+          "wdir": "VRB",
+          "wspd": 5,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": "6+",
+          "altim": null,
+          "vertVis": null,
+          "wxString": "NSW",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "NSC",
+              "base": null,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1781514000,
+          "timeTo": 1781524800,
+          "timeBec": 1781524800,
+          "fcstChange": "BECMG",
+          "probability": null,
+          "wdir": 200,
+          "wspd": 10,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": "6+",
+          "altim": null,
+          "vertVis": null,
+          "wxString": "NSW",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "NSC",
+              "base": null,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        }
+      ]
+    },
+    {},
+    {}
+  ],
+  "isoNow": "2026-06-14T16:10:01.192Z"
+}

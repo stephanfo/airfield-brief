@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-05-30T18:15:37.544Z",
+  "temsiList": [
+    {
+      "type": "TEMSI",
+      "level": "FL20-150",
+      "zone": "FRANCE",
+      "date": "30 05 2026 18:00",
+      "expiration": "30 05 2026 18:00",
+      "deadline": "18 UTC",
+      "link": "https://aviation.meteo.fr/FR/aviation/affiche_image.php?login=JETON_METEO_FRANCE_A_RENSEIGNER&layer=sigwx%2Ffr%2Ffrance&echeance=20260530180000"
+    },
+    {
+      "type": "TEMSI",
+      "level": "FL20-150",
+      "zone": "FRANCE",
+      "date": "30 05 2026 15:00",
+      "expiration": "30 05 2026 15:00",
+      "deadline": "15 UTC",
+      "link": "https://aviation.meteo.fr/FR/aviation/affiche_image.php?login=JETON_METEO_FRANCE_A_RENSEIGNER&layer=sigwx%2Ffr%2Ffrance&echeance=20260530150000"
+    }
+  ]
+}

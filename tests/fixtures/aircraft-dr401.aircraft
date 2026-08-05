@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Aircraft Name="Robin DR401-120 (RI-v1.19-A)" Registration="F-TEST" 
+HourlyCost="185.4" 
+EmptyWeight="595.100000" MaximumWeight="1054.600000" EmptyArmLon="403.00" 
+AirframeType="Aeroplane" MinimumRunwayLengthMetres="600" 
+HexCode="" BRS="False" FuelType="AvGas100LL" AlternateFuelType="None" FuelMeasurementType="Volume" FuelMeasurementVolumeType="Litres" FuelMeasurementMassType="Kilograms" TaxiFuel="4.000000" LandingFuel="2.000000" FinalReserveMinutes="30" MaxFuel="110.000000" WeightBalanceType="Standard" 
+EmptyArmLat="0.00" MinimumArmLat="0.00" MaximumArmLat="0.00" Type="DR40" 
+ColourMarkings="WHITE" 
+ServiceCeiling="11800" Equipment1="LOVY" Equipment2="S" OtherCommsEquipment="" OtherNavEquipment="" PbnEquipment="" FuelContingency="0.05" HoldingMinutes="10" 
+HourlyCostIncludesFuel="True" GlideAirspeed="73.00" GlideRatio="9.00" DefaultLevel="2500" EnvelopeType="DatumDistance" Envelope="428.00,900.000000,564.00,900.000000,564.00,650.000000,205.00,650.000000,205.00,750.000000">
+  <ClimbProfile FpmSL="500.000000" FpmSC="10.000000" IndicatedAirspeed="81.000000" FuelBurnSL="27.000000" FuelBurnSC="25.000000" />
+  <DescentProfile Fpm="-500.000000" IndicatedAirspeed="81.000000" FuelBurn="23.000000" />
+  <CruiseProfiles>
+    <CruiseProfile Name="2450 RPM" AirspeedType="Indicated" FuelBurn="25.000000" IndicatedAirspeed="100.000000" Airspeed="100.000000">
+      <Entry Level="2000" Airspeed="100.000000" FuelBurn="25.000000" />
+    </CruiseProfile>
+  </CruiseProfiles>
+  <LoadingPoints>
+    <FuelLoadingPoint Name="Main Tank" LeverArm="1120.00" LeverArmLat="0.00" DefaultValue="110.00" Capacity="110.00" Unusable="1.00" />
+    <LoadingPoint Name="Pilot" LeverArm="410.00" LeverArmLat="0.00" DefaultValue="82.00" />
+    <LoadingPoint Name="Front Passenger" LeverArm="410.00" LeverArmLat="0.00" DefaultValue="0.00" />
+    <LoadingPoint Name="Rear Passenger 1" LeverArm="1190.00" LeverArmLat="0.00" DefaultValue="0.00" />
+    <LoadingPoint Name="Rear Passenger 2" LeverArm="1190.00" LeverArmLat="0.00" DefaultValue="0.00" />
+    <LoadingPoint Name="Baggage" LeverArm="1900.00" LeverArmLat="0.00" DefaultValue="1.00" />
+  </LoadingPoints>
+  <ChecklistBundle>
+    <Checklist Name="Préparation" FlightPhase="Preflight">
+      <Section Name="Dossier de vol">
+        <CheckItem Challenge="Documents avion+pilote" Response="Vérifiés, à jour" />
+        <CheckItem Challenge="Conditions météo" Response="VFR (départ + en route + destination + dégagement)" />
+        <CheckItem Challenge="NOTAM, SUP-AIP, AZBA" Response="Consultés" />
+        <CheckItem Challenge="Espaces aériens, zones particulières" Response="Pris en compte" />
+        <CheckItem Challenge="Bilan carburant règlementaire" Response="Fait, autonomie suffisante" />
+        <CheckItem Challenge="Masse et centrage" Response="Dans l’enveloppe (TKOF+ZF)" />
+        <CheckItem Challenge="Limitations opérationnelles" Response="Performances vérifiées, vent compatible" />
+        <CheckItem Challenge="Heure nuit aéronautique" Response="Vérifiée" />
+        <CheckItem Challenge="Plan de vol (si nécessaire)" Response="FPL déposé" />
+        <CheckItem Challenge="Gilets de sauvetage (si survol maritime ou probabilité d’amerrissage)" Response="Gilets marine portés, ajustés" />
+        <CheckItem Challenge="TEM (menaces)" Response="Identifiées + contre-mesures" />
+        <CheckItem Challenge="Briefing passagers (cf. memo PAX FFA)" Response="Fait" />
+      </Section>
+    </Checklist>
+    <Checklist Name="Départ" FlightPhase="Preflight">
+      <Section Name="Prevol">
+        <CheckItem Challenge="Visite (intérieur+extérieur)" Response="Effectuée" />
+        <CheckItem Challenge="Eclairages (si nuit)" Response="Vérifiés" />
+        <CheckItem Challenge="Robinet carburant" Response="Vérifié, ouvert" />
+        <CheckItem Challenge="Purges carburant (si 1er vol ou pertinent)" Response="Effectuées AV+AR" />
+        <CheckItem Challenge="Niveau d'huile" Response="Vérifié entre 4.5 et 6" />
+        <CheckItem Challenge="Niveau d’essence (calcul autonomie)" Response="Vérifié + jaugeur manuel" />
+        <CheckItem Challenge="Coffre à bagages" Response="Fermé à clé" />
+        <CheckItem Challenge="Barre de traction" Response="Retirée" />
+        <CheckItem Challenge="Caches pitot + statiques" Response="Enlevés" />
+        <CheckItem Challenge="Briefings PAX+TEM (sécurité, menaces)" Response="Effectués + contre-mesures" />
+      </Section>
+      <Section Name="Avant mise en route">
+        <CheckItem Challenge="Horamètre départ" Response="Noté + photo" />
+        <CheckItem Challenge="Frein de parc" Response="Serré" />
+        <CheckItem Challenge="Sièges avant" Response="Réglés, verrouillés" />
+        <CheckItem Challenge="Ceintures" Response="Réglées, ouvertes" />
+        <CheckItem Challenge="Verrière" Response="Fermée, déverrouillée" />
+        <CheckItem Challenge="Général avionique" Response="OFF / Arrêt" />
+        <CheckItem Challenge="Alternateur" Response="OFF" />
+        <CheckItem Challenge="Batterie" Response="ON" />
+        <CheckItem Challenge="Flash anti-collision" Response="Toujours ON" />
+        <CheckItem Challenge="Feux de nav (si nuit)" Response="ON" />
+        <CheckItem Challenge="Volets" Response="Rentrés, vérifiés G+D (UP)" />
+        <CheckItem Challenge="Breakers" Response="Vérifiés" />
+        <CheckItem Challenge="Voyants d’alarme" Response="Testés, position JOUR" />
+      </Section>
+      <Section Name="Mise en route">
+        <CheckItem Challenge="Réchauffage carburateur" Response="COOL (position haute)" />
+        <CheckItem Challenge="Magnétos" Response="OFF, clé en place" />
+        <CheckItem Challenge="Abords, zone hélice" Response="Dégagés" />
+      </Section>
+      <Section Name="Démarrage moteur froid" Header="Si température huile &lt; 30°C">
+        <CheckItem Challenge="Mixture" Response="Plein riche" />
+        <CheckItem Challenge="Pompe électrique" Response="ON" />
+        <CheckItem Challenge="Manette de gaz" Response="2 injections + 1cm" />
+        <CheckItem Challenge="Démarreur" Response="START, 5 secondes max" />
+      </Section>
+      <Section Name="Démarrage moteur chaud" Header="Si température huile ≥ 30°C">
+        <CheckItem Challenge="Mixture" Response="Plein riche" />
+        <CheckItem Challenge="Pompe électrique" Response="OFF" />
+        <CheckItem Challenge="Manette de gaz" Response="Pas d’injection + 1cm" />
+        <CheckItem Challenge="Démarreur" Response="START, 5 secondes max" />
+      </Section>
+      <Section Name="Démarrage moteur noyé">
+        <CheckItem Challenge="Mixture" Response="Plein pauvre" />
+        <CheckItem Challenge="Pompe électrique" Response="OFF" />
+        <CheckItem Challenge="Manette de gaz" Response="Plein gaz" />
+        <CheckItem Challenge="Démarreur" Response="START, 10 secondes max" />
+        <CheckItem Challenge="Mixture" Response="Plein riche après démarrage" />
+      </Section>
+      <Section Name="Après mise en route">
+        <CheckItem Challenge="Régime" Response="1200 RPM" />
+        <CheckItem Challenge="Pression huile (dans les 15 secondes)" Response="Vérifiée, voyant éteint (sinon couper !)" />
+        <CheckItem Challenge="Pompe électrique" Response="OFF" />
+        <CheckItem Challenge="Alternateur" Response="ON, voyant CHARGE éteint" />
+        <CheckItem Challenge="Général avionique" Response="ON / Marche" />
+        <CheckItem Challenge="Volume COM radio" Response="Contrôlé (push SQ)" />
+        <CheckItem Challenge="Fréquences (radio+radionav)" Response="Réglées (LFFI 118.205)" />
+        <CheckItem Challenge="Transpondeur" Response="Toujours ALT + 7000" />
+        <CheckItem Challenge="Ceintures" Response="Bouclées, ajustées" />
+        <CheckItem Challenge="Phare de roulage" Response="ON" />
+      </Section>
+      <Section Name="Essais moteur" Header="Sauf consignes particulières, pas d’essais moteur au parking">
+        <CheckItem Challenge="Frein de parc" Response="Serré" />
+        <CheckItem Challenge="Pression huile" Response="Vérifiée, voyant éteint" />
+        <CheckItem Challenge="Température huile" Response="Décollée &gt;25°C" />
+        <CheckItem Challenge="Réchauffage carburateur" Response="COOL (position haute)" />
+        <CheckItem Challenge="Régime" Response="2000 RPM" />
+        <CheckItem Challenge="Sélection magnétos" Response="Chute 175 RPM max entre BOTH et L/R, écart 50 RPM max entre L et R" />
+        <CheckItem Challenge="Réchauffage carburateur" Response="Chute ≈ 100 RPM sur HOT (position basse), puis COOL (position haute)" />
+        <CheckItem Challenge="Essai ralenti" Response="≈ 650 RPM" />
+        <CheckItem Challenge="Régime" Response="1200 RPM" />
+      </Section>
+      <Section Name="Avant décollage">
+        <CheckItem Challenge="Commandes de vol" Response="Libre, dans le bon sens" />
+        <CheckItem Challenge="Compensateur (TRIM)" Response="Essayé, au neutre position T/O" />
+        <CheckItem Challenge="Altimètres" Response="Réglés (analogique+G5)" />
+        <CheckItem Challenge="Volets" Response="Sortis 1 cran, vérifiés G+D (TKOF)" />
+        <CheckItem Challenge="Pompe électrique" Response="ON" />
+        <CheckItem Challenge="Niveau d’essence" Response="Vérifié, autonomie annoncée" />
+        <CheckItem Challenge="Briefing départ + sécurité décollage" Response="Enoncé à voix haute" />
+        <CheckItem Challenge="Ventilation" Response="OFF" />
+        <CheckItem Challenge="Piste et axes" Response="Dégagés" />
+      </Section>
+      <Section Name="Aligné" Header="Do List = faire par cœur">
+        <CheckItem Challenge="Verrière" Response="Fermée, verrouillée" />
+        <CheckItem Challenge="Phare d’atterrissage" Response="ON" />
+        <CheckItem Challenge="Compas + Conservateur de cap" Response="Vérifiés au QFU" />
+      </Section>
+    </Checklist>
+    <Checklist Name="En vol" FlightPhase="DuringFlight">
+      <Section Name="VVPPR" AutoReset="True" Header="Changement de configuration en vol">
+        <CheckItem Challenge="V = Vitesse" Response="Compatible" />
+        <CheckItem Challenge="V = Volets" Response="Adaptés" />
+        <CheckItem Challenge="P = Pompe" Response="Si nécessaire" />
+        <CheckItem Challenge="P = Phares" Response="Si nécessaire" />
+        <CheckItem Challenge="R = Réchauffe" Response="Comme préconisé" />
+      </Section>
+      <Section Name="TRAZMER" AutoReset="True" Header="Point tournant, bilan en vol">
+        <CheckItem Challenge="T = Top" Response="Heure réelle de passage + estimée point suivant notées" />
+        <CheckItem Challenge="R = Route" Response="Cap suivi (avec dérive corrigée)" />
+        <CheckItem Challenge="A = Altitude" Response="Niveau respecté + avion compensé" />
+        <CheckItem Challenge="Z = Zones" Response="Zones à proximité + espaces aériens vérifiés" />
+        <CheckItem Challenge="M = Météo + Moteur" Response="Conditions toujours VMC + moteur vérifié (indications, régime, richesse)" />
+        <CheckItem Challenge="E = Essence, énergie" Response="Conso vérifiée + temps moteur restant estimé" />
+        <CheckItem Challenge="R = Radio, radionav" Response="Message fait + fréquences préparées + radial réglé" />
+      </Section>
+    </Checklist>
+    <Checklist Name="Arrivée" FlightPhase="DuringFlight">
+      <Section Name="Après atterrissage">
+        <CheckItem Challenge="Volets" Response="Rentrés (UP)" />
+        <CheckItem Challenge="Pompe électrique" Response="OFF" />
+        <CheckItem Challenge="Phare d’atterrissage" Response="OFF" />
+        <CheckItem Challenge="Réchauffage carburateur" Response="COOL (position haute)" />
+      </Section>
+      <Section Name="Arrêt moteur">
+        <CheckItem Challenge="Frein de parc" Response="Serré" />
+        <CheckItem Challenge="Radio" Response="Quittée (message)" />
+        <CheckItem Challenge="Transpondeur" Response="Toujours ALT + 7000" />
+        <CheckItem Challenge="Général avionique" Response="OFF" />
+        <CheckItem Challenge="Volets" Response="Sortis 2 crans (LDG)" />
+        <CheckItem Challenge="Ventilation" Response="OFF" />
+        <CheckItem Challenge="Alternateur" Response="OFF" />
+        <CheckItem Challenge="Régime" Response="Ralenti, 800 RPM max" />
+        <CheckItem Challenge="Essai coupure, en décomposant" Response="L, R, OFF, BOTH" />
+        <CheckItem Challenge="Régime" Response="1200 RPM" />
+        <CheckItem Challenge="Mixture" Response="Plein pauvre, puis attendre extinction" />
+        <CheckItem Challenge="Magnétos" Response="OFF, clé retirée" />
+        <CheckItem Challenge="Manette de gaz" Response="Plein ralenti" />
+        <CheckItem Challenge="Phares + Feux de nav" Response="OFF" />
+        <CheckItem Challenge="Eclairages (si nuit)" Response="Eteints" />
+        <CheckItem Challenge="Flash anti-collision" Response="Toujours ON" />
+        <CheckItem Challenge="Batterie" Response="OFF" />
+        <CheckItem Challenge="Horamètre arrivée" Response="Noté + photo" />
+      </Section>
+    </Checklist>
+    <Checklist Name="Actions après vol" FlightPhase="Postflight">
+      <Section Name="Post-vol">
+        <CheckItem Challenge="Plan de vol" Response="FPL clôturé (BNIA : 05.57.92.60.84)" />
+        <CheckItem Challenge="Avitaillement" Response="Plein complet si moins de 37L restants" />
+        <CheckItem Challenge="Caches pitot + statiques" Response="Mis systématiquement entre chaque vol" />
+        <CheckItem Challenge="Verrière" Response="Propre ou nettoyée" />
+        <CheckItem Challenge="Sécurité aéronef (si nécessaire)" Response="Commandes bloquées + cales + arrimage" />
+        <CheckItem Challenge="Anomalie à signaler ?" Response="Cahier de suivi et/ou carnet de route" />
+        <CheckItem Challenge="Incident ou accident ?" Response="Voir checklist urgences pour les contacts" />
+      </Section>
+    </Checklist>
+    <Checklist Name="Procédures urgences" FlightPhase="Emergency">
+      <Section Name="Arrêt décollage">
+        <CheckItem Challenge="Manette de gaz" Response="Plein réduit" />
+        <CheckItem Challenge="Freinage" Response="Adapté + trajectoire" />
+        <CheckItem Challenge="Si risque incendie : Mixture" Response="Etouffoir" />
+        <CheckItem Challenge="Robinet carburant" Response="Fermé" />
+        <CheckItem Challenge="Magnétos + Batterie" Response="OFF" />
+      </Section>
+      <Section Name="Panne moteur - Montée initiale">
+        <CheckItem Challenge="Vitesse" Response="Manche en avant, 135 km/h" />
+        <CheckItem Challenge="Mixture" Response="Etouffoir" />
+        <CheckItem Challenge="Robinet carburant" Response="Fermé" />
+        <CheckItem Challenge="Magnétos + Batterie" Response="OFF" />
+      </Section>
+      <Section Name="Panne moteur - En vol">
+        <CheckItem Challenge="Vitesse finesse max" Response="135 km/h" />
+        <CheckItem Challenge="Robinet carburant" Response="Ouvert" />
+        <CheckItem Challenge="Pompe électrique" Response="ON" />
+        <CheckItem Challenge="Mixture" Response="Plein riche" />
+        <CheckItem Challenge="Manette de gaz" Response="¼ avant" />
+        <CheckItem Challenge="Batterie + Alternateur" Response="Vérifiés ON" />
+        <CheckItem Challenge="Magnétos" Response="BOTH, puis START si besoin" />
+        <CheckItem Challenge="Si moteur toujours coupé" Response="Atterrissage forcé" />
+      </Section>
+      <Section Name="Atterrissage forcé sans moteur">
+        <CheckItem Challenge="Vitesse finesse max" Response="135 km/h" />
+        <CheckItem Challenge="Ceintures" Response="Serrées" />
+        <CheckItem Challenge="Communication" Response="ELT + 7700 + MAYDAY" />
+        <CheckItem Challenge="Pompe électrique" Response="OFF" />
+        <CheckItem Challenge="Mixture" Response="Etouffoir" />
+        <CheckItem Challenge="Manette de gaz" Response="Plein réduit" />
+        <CheckItem Challenge="Magnétos + Alternateur" Response="OFF" />
+        <CheckItem Challenge="Robinet carburant" Response="Fermé" />
+        <CheckItem Challenge="Volets" Response="Position adaptée" />
+        <CheckItem Challenge="Batterie" Response="OFF" />
+        <CheckItem Challenge="Verrière" Response="Déverrouillée" />
+        <CheckItem Challenge="Si verrière bloquée" Response="Largage verrière" />
+      </Section>
+      <Section Name="Feu moteur - Au démarrage">
+        <CheckItem Challenge="Robinet carburant" Response="Fermé" />
+        <CheckItem Challenge="Pompe électrique" Response="OFF" />
+        <CheckItem Challenge="Manette de gaz" Response="Plein gaz" />
+        <CheckItem Challenge="Mixture" Response="Etouffoir" />
+        <CheckItem Challenge="Magnétos + Batterie + Alternateur" Response="OFF" />
+        <CheckItem Challenge="Avion" Response="Evacué" />
+        <CheckItem Challenge="Eteindre l’incendie si possible" Response="Fait" />
+      </Section>
+      <Section Name="Feu moteur - En vol">
+        <CheckItem Challenge="Robinet carburant" Response="Fermé" />
+        <CheckItem Challenge="Manette de gaz" Response="Plein gaz, attendre arrêt moteur" />
+        <CheckItem Challenge="Mixture" Response="Etouffoir" />
+        <CheckItem Challenge="Chauffage + Ventilation" Response="OFF" />
+        <CheckItem Challenge="-" Response="Atterrissage forcé sans moteur" />
+      </Section>
+      <Section Name="Feu dans la cabine">
+        <CheckItem Challenge="Tenter d’éteindre l’incendie" Response="Fait" />
+        <CheckItem Challenge="Aérateurs" Response="Ouverts au max" />
+        <CheckItem Challenge="Si feu d’origine électrique : Magnétos + Batterie + Alternateur" Response="OFF" />
+        <CheckItem Challenge="Chauffage" Response="OFF" />
+        <CheckItem Challenge="-" Response="Atterrissage forcé sans moteur" />
+      </Section>
+      <Section Name="Vrille involontaire">
+        <CheckItem Challenge="Manette de gaz" Response="Plein réduit" />
+        <CheckItem Challenge="Direction" Response="Pied à fond CONTRE la rotation" />
+        <CheckItem Challenge="Profondeur + Ailerons" Response="Manche au neutre" />
+        <CheckItem Challenge="Volets" Response="Rentrés" />
+        <CheckItem Challenge="Dès arrêt rotation : Direction" Response="Pieds au neutre" />
+        <CheckItem Challenge="Ressource souple" Response="Effectuée" />
+      </Section>
+      <Section Name="Monoxyde de carbone">
+        <CheckItem Challenge="Chauffage + Ventilation" Response="OFF" />
+        <CheckItem Challenge="Aérateurs" Response="Ouverts au max" />
+        <CheckItem Challenge="Atterrissage" Response="Déroutement AD proche" />
+      </Section>
+    </Checklist>
+    <Checklist Name="Procédures secours" FlightPhase="Emergency">
+      <Section Name="Vibrations - Irrégularités moteur">
+        <CheckItem Challenge="Robinet carburant" Response="Ouvert" />
+        <CheckItem Challenge="Mixture" Response="Réglée" />
+        <CheckItem Challenge="Pompe électrique" Response="ON" />
+        <CheckItem Challenge="Réchauffage carburateur" Response="HOT (baissé)" />
+        <CheckItem Challenge="Manette de gaz" Response="Régime adapté" />
+        <CheckItem Challenge="Sélection magnéto, au mieux" Response="L, R, BOTH" />
+        <CheckItem Challenge="Si palier impossible" Response="Atterrissage forcé" />
+      </Section>
+      <Section Name="Interruption volontaire de vol">
+        <CheckItem Challenge="Communication" Response="ELT + 7700 + MAYDAY" />
+        <CheckItem Challenge="Vitesse attente" Response="140 km/h" />
+        <CheckItem Challenge="Volets" Response="Sortis 1 cran" />
+        <CheckItem Challenge="Reconnaissance zone" Response="VERDO (Vent, Etat, Relief, Distance, Obstacle)" />
+        <CheckItem Challenge="En finale : Vitesse de précaution" Response="110 km/h" />
+        <CheckItem Challenge="Volets" Response="Sortis 2 crans" />
+        <CheckItem Challenge="Verrière" Response="Déverrouillée" />
+        <CheckItem Challenge="Avant de toucher le sol : Mixture" Response="Etouffoir" />
+        <CheckItem Challenge="Robinet carburant" Response="Fermé" />
+        <CheckItem Challenge="Magnétos + Batterie" Response="OFF" />
+        <CheckItem Challenge="Si verrière bloquée" Response="Largage verrière" />
+      </Section>
+      <Section Name="Baisse pression huile">
+        <CheckItem Challenge="Puissance" Response="Réduite" />
+        <CheckItem Challenge="Température huile" Response="Surveillée" />
+        <CheckItem Challenge="Si température haute ou anormale : Atterrissage" Response="Dès que possible (IVV ?)" />
+        <CheckItem Challenge="Si température normale : Atterrissage" Response="Déroutement AD proche" />
+      </Section>
+      <Section Name="Température huile élevée">
+        <CheckItem Challenge="Vitesse" Response="Rendre la main, augmentée" />
+        <CheckItem Challenge="Puissance" Response="Réduite" />
+        <CheckItem Challenge="Pression huile" Response="Vérifiée" />
+        <CheckItem Challenge="Si basse pression huile : Atterrissage" Response="Dès que possible (IVV ?)" />
+        <CheckItem Challenge="Si pression huile normale : Atterrissage" Response="Déroutement AD proche" />
+      </Section>
+      <Section Name="Panne alternateur - Problème charge">
+        <CheckItem Challenge="Alternateur" Response="OFF puis ON" />
+        <CheckItem Challenge="Voyant CHARGE" Response="Vérifié" />
+        <CheckItem Challenge="Si panne persistante : Alternateur" Response="OFF" />
+        <CheckItem Challenge="Equipements électriques non-indispensables" Response="Coupés" />
+        <CheckItem Challenge="Atterrissage" Response="Déroutement AD proche" />
+      </Section>
+      <Section Name="Panne commande de profondeur">
+        <CheckItem Challenge="Vol horizontal" Response="Stabilisé, 135 km/h" />
+        <CheckItem Challenge="Pente" Response="Gérée au gaz uniquement" />
+      </Section>
+      <Section Name="Panne commande de trim">
+        <CheckItem Challenge="Profondeur" Response="Contrer au manche" />
+        <CheckItem Challenge="Breaker TRIM" Response="Tiré, ne pas réarmer" />
+        <CheckItem Challenge="Vitesse" Response="Diminuée" />
+        <CheckItem Challenge="Volets" Response="Chercher configuration effort minimal" />
+      </Section>
+      <Section Name="Panne commande de volets">
+        <CheckItem Challenge="Sélecteur position" Response="Idem position visuelle" />
+        <CheckItem Challenge="Vitesse approche recommandée" Response="130 km/h" />
+        <CheckItem Challenge="Vitesse approche minimum" Response="122 km/h" />
+        <CheckItem Challenge="Si atterrissage volets rentrés : longueur atterrissage +30%" Response="Performances vérifiées" />
+      </Section>
+      <Section Name="Panne système électrique">
+        <CheckItem Challenge="Breakers" Response="Vérifiés" />
+        <CheckItem Challenge="Si indispensable" Response="Réarmer 1 fois max" />
+      </Section>
+      <Section Name="Panne radio">
+        <CheckItem Challenge="Recherche de panne et tests" Response="Fait" />
+        <CheckItem Challenge="Volume COM radio" Response="Vérifié (push SQ)" />
+        <CheckItem Challenge="Fréquence active + Portée" Response="Vérifiées" />
+        <CheckItem Challenge="Si panne confirmée : Transpondeur" Response="ALT + 7600" />
+        <CheckItem Challenge="Messages" Response="Transmettre dans le vide" />
+        <CheckItem Challenge="Si casque BT" Response="191, par téléphone" />
+        <CheckItem Challenge="Si consignes publiées" Response="Lire carte VAC" />
+        <CheckItem Challenge="Si clairance reçue" Response="Poursuivre" />
+        <CheckItem Challenge="Sans clairance" Response="Espaces aériens évités" />
+        <CheckItem Challenge="Déroutement vers AD approprié" Response="Envisagé" />
+      </Section>
+    </Checklist>
+  </ChecklistBundle>
+</Aircraft>

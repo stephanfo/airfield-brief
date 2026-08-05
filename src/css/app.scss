@@ -1,0 +1,53 @@
+// app global css in SCSS form
+
+body {
+  color: #0f1724;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  /* Fallback for older browsers */
+  background: linear-gradient(180deg, #051a3b 0%, #073b8a 30%, #0e2a44 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Fixed full-viewport gradient to ensure consistent appearance regardless of page length */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, #051a3b 0%, rgba(7, 59, 138, 0.12) 20%, #0e2a44 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.q-page {
+  background: transparent;
+}
+
+// Custom grid class for 5 columns on xl screens
+@media (min-width: 1440px) {
+  .col-xl-2-4 {
+    width: 20%;
+    flex: 0 0 20%;
+  }
+}
+
+/* Rayon d'arrondi global des cartes (cohérence visuelle de l'app) */
+:root {
+  --app-border-radius: 12px;
+}
+
+.q-card,
+.q-banner {
+  border-radius: var(--app-border-radius);
+  overflow: hidden;
+}
+
+.q-card img,
+.q-card-section img,
+.q-banner img {
+  border-radius: 0;
+}

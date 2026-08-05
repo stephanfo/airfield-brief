@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= productName %></title>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="<%= productDescription %>" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (ctx.mode.cordova || ctx.mode.capacitor || ctx.mode.pwa) { %>, viewport-fit=cover<% } %>"
+    />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%= productName %>" />
+    <meta property="og:description" content="<%= productDescription %>" />
+    <meta property="og:image" content="<%= ogImageUrl %>" />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <!-- quasar:entry-point -->
+  </body>
+</html>

@@ -1,0 +1,339 @@
+{
+  "generatedAt": "2026-06-06T00:00:00.000Z",
+  "_doc": "Index des avions. Les données de masse/centrage, chargement, carburant, tarif et check-lists proviennent des fichiers .aircraft (source de vérité, dossier aircrafts/). Ce fichier ne fait que les référencer et COMPLÉTER ce qui manque dans le XML (tables de performances décollage/atterrissage, densité carburant).",
+  "fuelDensity": {
+    "AvGas100LL": 0.72
+  },
+  "defaultPerformance": {
+    "_note": "Abaques du Manuel de vol DR400/120 (réf. 1002853, éd. 0, approuvé 27/03/2018), section 5. Distances en mètres sur piste en dur, sèche et plane. L'axe température est l'ÉCART À L'ISA (temperatureMode=isaDeviation) : le manuel tabule ISA-20 / ISA / ISA+20. over50ft = distance pour le passage des 15 m (50 ft) ; groundRoll = distance de roulement. Lecture conservatrice recommandée par le POH (valeur immédiatement supérieure).",
+    "temperatureMode": "isaDeviation",
+    "source": "Manuel de vol DR400/120 (réf. 1002853, éd. 0), section 5 — perfos génériques du type.",
+    "assumptions": [
+      "Abaques sur piste en dur, sèche et plane. Décollage : volets 1er cran, pleine puissance avant lâcher des freins. Atterrissage : volets 2e cran, gaz réduits.",
+      "Vitesses POH — décollage : Vlof 54 kt, passage 15 m 70 kt. Atterrissage : passage 15 m 60 kt, touché 45 kt.",
+      "Corrections appliquées : vent de face (table POH), vent arrière +5 %/kt, herbe +15 %. Pente non prise en compte.",
+      "Privilégiez une lecture conservatrice (valeur immédiatement supérieure) et vérifiez le POH de l’appareil."
+    ],
+    "takeoff": {
+      "corrections": {
+        "_note": "POH §5 décollage : vent de face ×0,85/0,65/0,55 à 10/20/30 kt ; vent arrière +10 % par 2 kt (0,05/kt) ; herbe courte sèche +15 %. wetGrass non couvert par le POH (estimation conservatrice). Pente : règle usuelle 2 % montant = +10 % (0,05/%).",
+        "headwind": [
+          {
+            "kt": 0,
+            "factor": 1
+          },
+          {
+            "kt": 10,
+            "factor": 0.85
+          },
+          {
+            "kt": 20,
+            "factor": 0.65
+          },
+          {
+            "kt": 30,
+            "factor": 0.55
+          }
+        ],
+        "tailwindPerKt": 0.05,
+        "slopePer1Percent": 0.05,
+        "surface": {
+          "paved": 1,
+          "grass": 1.15,
+          "wetGrass": 1.35
+        }
+      },
+      "table": [
+        {
+          "pressureAltitude": 0,
+          "temperature": -20,
+          "weight": 700,
+          "groundRoll": 130,
+          "over50ft": 285
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 0,
+          "weight": 700,
+          "groundRoll": 145,
+          "over50ft": 315
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 20,
+          "weight": 700,
+          "groundRoll": 165,
+          "over50ft": 345
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": -20,
+          "weight": 900,
+          "groundRoll": 225,
+          "over50ft": 480
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 0,
+          "weight": 900,
+          "groundRoll": 235,
+          "over50ft": 535
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 20,
+          "weight": 900,
+          "groundRoll": 285,
+          "over50ft": 590
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": -20,
+          "weight": 700,
+          "groundRoll": 175,
+          "over50ft": 375
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 0,
+          "weight": 700,
+          "groundRoll": 195,
+          "over50ft": 415
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 20,
+          "weight": 700,
+          "groundRoll": 220,
+          "over50ft": 460
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": -20,
+          "weight": 900,
+          "groundRoll": 305,
+          "over50ft": 645
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 0,
+          "weight": 900,
+          "groundRoll": 345,
+          "over50ft": 720
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 20,
+          "weight": 900,
+          "groundRoll": 390,
+          "over50ft": 800
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": -20,
+          "weight": 700,
+          "groundRoll": 235,
+          "over50ft": 500
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 0,
+          "weight": 700,
+          "groundRoll": 265,
+          "over50ft": 560
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 20,
+          "weight": 700,
+          "groundRoll": 300,
+          "over50ft": 620
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": -20,
+          "weight": 900,
+          "groundRoll": 425,
+          "over50ft": 890
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 0,
+          "weight": 900,
+          "groundRoll": 475,
+          "over50ft": 1000
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 20,
+          "weight": 900,
+          "groundRoll": 535,
+          "over50ft": 1125
+        }
+      ]
+    },
+    "landing": {
+      "corrections": {
+        "_note": "POH §5 atterrissage : vent de face ×0,78/0,63/0,52 à 10/20/30 kt ; vent arrière +10 % par 2 kt (0,05/kt) ; herbe courte sèche +15 %. wetGrass non couvert par le POH (estimation conservatrice).",
+        "headwind": [
+          {
+            "kt": 0,
+            "factor": 1
+          },
+          {
+            "kt": 10,
+            "factor": 0.78
+          },
+          {
+            "kt": 20,
+            "factor": 0.63
+          },
+          {
+            "kt": 30,
+            "factor": 0.52
+          }
+        ],
+        "tailwindPerKt": 0.05,
+        "surface": {
+          "paved": 1,
+          "grass": 1.15,
+          "wetGrass": 1.35
+        }
+      },
+      "table": [
+        {
+          "pressureAltitude": 0,
+          "temperature": -20,
+          "weight": 700,
+          "groundRoll": 145,
+          "over50ft": 365
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 0,
+          "weight": 700,
+          "groundRoll": 155,
+          "over50ft": 385
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 20,
+          "weight": 700,
+          "groundRoll": 165,
+          "over50ft": 400
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": -20,
+          "weight": 900,
+          "groundRoll": 185,
+          "over50ft": 435
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 0,
+          "weight": 900,
+          "groundRoll": 200,
+          "over50ft": 460
+        },
+        {
+          "pressureAltitude": 0,
+          "temperature": 20,
+          "weight": 900,
+          "groundRoll": 210,
+          "over50ft": 485
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": -20,
+          "weight": 700,
+          "groundRoll": 160,
+          "over50ft": 395
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 0,
+          "weight": 700,
+          "groundRoll": 175,
+          "over50ft": 420
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 20,
+          "weight": 700,
+          "groundRoll": 185,
+          "over50ft": 440
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": -20,
+          "weight": 900,
+          "groundRoll": 205,
+          "over50ft": 475
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 0,
+          "weight": 900,
+          "groundRoll": 225,
+          "over50ft": 505
+        },
+        {
+          "pressureAltitude": 4000,
+          "temperature": 20,
+          "weight": 900,
+          "groundRoll": 240,
+          "over50ft": 535
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": -20,
+          "weight": 700,
+          "groundRoll": 180,
+          "over50ft": 430
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 0,
+          "weight": 700,
+          "groundRoll": 195,
+          "over50ft": 460
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 20,
+          "weight": 700,
+          "groundRoll": 210,
+          "over50ft": 485
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": -20,
+          "weight": 900,
+          "groundRoll": 235,
+          "over50ft": 525
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 0,
+          "weight": 900,
+          "groundRoll": 250,
+          "over50ft": 555
+        },
+        {
+          "pressureAltitude": 8000,
+          "temperature": 20,
+          "weight": 900,
+          "groundRoll": 270,
+          "over50ft": 590
+        }
+      ]
+    }
+  },
+  "aircraft": [
+    {
+      "registration": "F-XXXX",
+      "source": "./data/aircrafts/F-XXXX.aircraft"
+    }
+  ]
+}

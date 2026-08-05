@@ -1,0 +1,57 @@
+{
+  "vacs": [
+    {
+      "icao": "LFFI",
+      "name": "Ancenis",
+      "latitude": 47.4072,
+      "longitude": -1.1789,
+      "elevation_ft": 109,
+      "url": "https://www.sia.aviation-civile.gouv.fr/media/dvd/eAIP_11_JUN_2026/Atlas-VAC/PDF_AIPparSSection/VAC/AD/AD-2.LFFI.pdf",
+      "createDate": "2024-04-03T12:00:55Z"
+    },
+    {
+      "icao": "LFRS",
+      "name": "Nantes Atlantique",
+      "latitude": 47.1532,
+      "longitude": -1.6107,
+      "elevation_ft": 90,
+      "url": "https://www.sia.aviation-civile.gouv.fr/media/dvd/eAIP_11_JUN_2026/Atlas-VAC/PDF_AIPparSSection/VAC/AD/AD-2.LFRS.pdf",
+      "createDate": "2026-03-27T15:48:24Z"
+    },
+    {
+      "icao": "LFRZ",
+      "name": "Saint-Nazaire Montoir",
+      "latitude": 47.3122,
+      "longitude": -2.1492,
+      "elevation_ft": 13,
+      "url": "https://www.sia.aviation-civile.gouv.fr/media/dvd/eAIP_11_JUN_2026/Atlas-VAC/PDF_AIPparSSection/VAC/AD/AD-2.LFRZ.pdf",
+      "createDate": "2025-07-17T06:35:31Z"
+    },
+    {
+      "icao": "LFRE",
+      "name": "La Baule-Escoublac",
+      "latitude": 47.2883,
+      "longitude": -2.3469,
+      "elevation_ft": 106,
+      "url": "https://www.sia.aviation-civile.gouv.fr/media/dvd/eAIP_11_JUN_2026/Atlas-VAC/PDF_AIPparSSection/VAC/AD/AD-2.LFRE.pdf",
+      "createDate": "2025-06-23T11:59:45Z"
+    },
+    {
+      "icao": "LFER",
+      "name": "Redon - Bains-sur-Oust",
+      "latitude": 47.6514,
+      "longitude": -2.0831,
+      "elevation_ft": 220,
+      "url": "https://www.sia.aviation-civile.gouv.fr/media/dvd/eAIP_11_JUN_2026/Atlas-VAC/PDF_AIPparSSection/VAC/AD/AD-2.LFER.pdf",
+      "createDate": "2025-12-09T12:44:10Z"
+    }
+  ],
+  "generatedAt": "2026-06-14T07:00:06.048Z",
+  "airac": {
+    "airac": "6/2026",
+    "validFrom": "2026-06-11T00:00:00.000Z",
+    "validTo": "2026-07-08T23:59:59.999Z",
+    "eAIP": "eAIP_11_JUN_2026",
+    "computedAtUtc": "2026-06-14T07:00:06.048Z"
+  }
+}

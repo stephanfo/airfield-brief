@@ -1,0 +1,58 @@
+.DS_Store
+.thumbs.db
+node_modules
+
+
+# Quasar core related directories
+.quasar
+/dist
+
+# Vitest coverage
+/coverage
+/quasar.config.*.temporary.compiled*
+
+# Cordova related directories and files
+/src-cordova/node_modules
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+
+# Capacitor related directories and files
+/src-capacitor/www
+/src-capacitor/node_modules
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# local .env files
+.env
+.env.local*
+
+# ─────────────────────────────────────────────────────────────
+# Données du pipeline (générées hors application)
+# ─────────────────────────────────────────────────────────────
+# Les JSON de public/data/ sont produits par le pipeline (N8N / scripts) et
+# déposés sur l'hébergement : ce sont des DONNÉES, pas du code. Les versionner
+# polluerait l'historique à chaque rafraîchissement et republierait des données
+# tierces (REX FFA). Des exemples anonymisés vivent dans public/data/examples/.
+public/data/*.json
+
+# Fiches avion du club (masse & centrage, coûts) — propres à chaque aéroclub.
+# Un exemple générique est fourni dans public/data/examples/aircrafts/.
+public/data/aircrafts/
+
+# Réglages locaux Claude Code
+.claude/
+
+# Sources des captures d'écran : seuls les PNG convertis sont versionnés
+docs/screenshots/*.jpeg
+docs/screenshots/*.jpg

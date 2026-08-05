@@ -1,0 +1,57 @@
+# Fallback SPA + en-têtes de cache pour Apache (hébergement OVH & assimilés).
+#
+# À copier À LA RACINE du répertoire servi, à côté de l'index.html du build
+# (`dist/pwa/`). Sans ce fichier, l'application en mode `history` (ADR-009,
+# amendement du 05/08/2026) renvoie un 404 serveur dès qu'on ouvre directement
+# une URL profonde (ex. /notam) ou qu'on rafraîchit ailleurs qu'à la racine.
+#
+# Déploiement dans un SOUS-RÉPERTOIRE : décommenter et ajuster `RewriteBase`
+# ci-dessous, en cohérence avec la variable PUBLIC_PATH du `.env`.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # RewriteBase /sous-chemin/
+
+  # Les fichiers et répertoires qui existent réellement sont servis tels quels :
+  # assets, icônes, et surtout les JSON de `data/` (sinon ils recevraient le
+  # HTML de l'index et casseraient silencieusement le chargement des données).
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Toute autre URL est confiée au routeur côté client.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Les données JSON sont régénérées en continu par le pipeline : la fraîcheur
+  # prime, le cache applicatif (service worker + useCache) fait déjà son office.
+  # (Déclaré en premier : les directives suivantes, plus spécifiques, doivent
+  # pouvoir écraser celle-ci — le dernier bloc correspondant l'emporte.)
+  <FilesMatch "\.json$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # index.html est revalidé à chaque chargement (il référence les assets
+  # hashés du build courant).
+  <FilesMatch "^index\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Le service worker et le manifest ne doivent JAMAIS être servis depuis un
+  # cache navigateur périmé : c'est ce qui empêcherait les mises à jour de
+  # l'application d'être détectées.
+  <FilesMatch "^(sw\.js|manifest\.json)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Les assets portent un hash dans leur nom : ils sont immuables.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

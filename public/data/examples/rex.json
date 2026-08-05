@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-08-03T21:06:13Z",
+  "source": "FFA REX (api-rex.ffa-aero.fr)",
+  "window": {
+    "months": 12,
+    "startISO": "2025-09-01T00:00:00Z",
+    "endISO": "2026-08-31T23:59:59Z"
+  },
+  "summary": {
+    "period": "2026-07",
+    "model": "exemple",
+    "generatedAt": "2026-08-03T20:27:48Z",
+    "text": "## Synthèse d’exemple\n\nContenu **fictif** servant uniquement au développement local. Les vraies synthèses sont générées à partir de la base REX de la FFA et ne sont pas redistribuées avec ce dépôt.\n\n- {1} Exemple de citation cliquable renvoyant vers le REX d’exemple.",
+    "citedRexIds": [
+      "1"
+    ]
+  },
+  "summaries": [
+    {
+      "period": "2026-07",
+      "model": "exemple",
+      "generatedAt": "2026-08-03T20:27:48Z",
+      "text": "## Synthèse d’exemple\n\nContenu **fictif** servant uniquement au développement local. Les vraies synthèses sont générées à partir de la base REX de la FFA et ne sont pas redistribuées avec ce dépôt.\n\n- {1} Exemple de citation cliquable renvoyant vers le REX d’exemple.",
+      "citedRexIds": [
+        "1"
+      ]
+    }
+  ],
+  "rex": [
+    {
+      "id": "1",
+      "title": "Exemple de REX (contenu fictif)",
+      "description": "Cet enregistrement est un EXEMPLE destiné au développement local. Il ne provient pas de la base REX de la FFA.",
+      "eventSummary": "Résumé fictif de l’évènement.",
+      "type": "Anomalie",
+      "subject": "Dans / Autour d’un avion",
+      "place": "LFXX",
+      "eventDate": "2026-01-15",
+      "flightKind": "Local",
+      "flightRegime": "VFR Jour",
+      "eventKind": "Incident",
+      "aircraftType": "ROBIN - 2+2 (DR-400)",
+      "eventType": "RE: Exemple",
+      "initialRisk": {
+        "severity": 2,
+        "probability": 2
+      },
+      "fromClub": true,
+      "causes": [
+        {
+          "type": "Cause Principale",
+          "title": "Cause fictive",
+          "description": "Exemple."
+        }
+      ],
+      "actions": [
+        {
+          "description": "Action corrective fictive."
+        }
+      ],
+      "safetyEducation": "Enseignement fictif à des fins de démonstration."
+    }
+  ]
+}

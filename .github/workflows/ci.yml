@@ -1,0 +1,32 @@
+# CI — lint + tests unitaires (TECH-001 / ADR-022)
+# Node 22 = full-ICU par défaut → rendus fr-FR (toLocaleString) déterministes.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    env:
+      TZ: UTC
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests unitaires
+        run: npm test
