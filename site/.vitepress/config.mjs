@@ -1,4 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { dirname as pathDirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const dirname = pathDirname(fileURLToPath(import.meta.url))
 
 // Le site est déployable soit à la racine d'un domaine personnalisé (défaut),
 // soit dans un sous-chemin GitHub Pages (stephanfo.github.io/airfield-brief/).
@@ -16,6 +20,23 @@ const repo = 'https://github.com/stephanfo/airfield-brief'
 const ghBlob = (p) => `${repo}/blob/main/${p}`
 
 export default defineConfig({
+  // Le site est un projet npm distinct de l'application. Sans ces deux réglages,
+  // Vite remonte l'arborescence et hérite de la configuration de l'app Quasar
+  // (postcss.config.js, jsconfig.json), dont les dépendances ne sont pas
+  // installées ici : le build échoue sur un dépôt fraîchement cloné.
+  vite: {
+    css: { postcss: {} },
+    esbuild: { tsconfigRaw: {} },
+    // Les pages vivent dans ../docs, hors de ce projet npm : sans cela, Vite y
+    // cherche vue/ et ses dépendances et ne les trouve pas sur un dépôt cloné.
+    resolve: {
+      alias: {
+        vue: resolve(dirname, '../node_modules/vue'),
+        'vue/server-renderer': resolve(dirname, '../node_modules/vue/server-renderer'),
+      },
+    },
+  },
+
   lang: 'fr-FR',
   title: 'Airfield Brief',
   description:
