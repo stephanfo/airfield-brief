@@ -27,6 +27,9 @@ export default defineConfig({
   vite: {
     css: { postcss: {} },
     esbuild: { tsconfigRaw: {} },
+    // srcDir pointant sur ../docs, VitePress chercherait les fichiers statiques
+    // dans docs/public/. Les assets du site vivent avec le site, pas avec la doc.
+    publicDir: resolve(dirname, '../public'),
     // Les pages vivent dans ../docs, hors de ce projet npm : sans cela, Vite y
     // cherche vue/ et ses dépendances et ne les trouve pas sur un dépôt cloné.
     resolve: {
