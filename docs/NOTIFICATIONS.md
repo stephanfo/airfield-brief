@@ -91,9 +91,9 @@ Copiez `.env.example` en `.env` et remplissez :
 
 ```bash
 FIREBASE_API_KEY=AIzaSyC...           # firebaseConfig.apiKey
-FIREBASE_AUTH_DOMAIN=lffi-brief.firebaseapp.com
-FIREBASE_PROJECT_ID=lffi-brief
-FIREBASE_STORAGE_BUCKET=lffi-brief.appspot.com
+FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 FIREBASE_MESSAGING_SENDER_ID=123456789
 FIREBASE_APP_ID=1:123456789:web:abc...
 FIREBASE_VAPID_KEY=BN7x...            # Clé publique VAPID générée

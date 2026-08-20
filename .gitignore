@@ -56,3 +56,7 @@ public/data/aircrafts/
 # Sources des captures d'écran : seuls les PNG convertis sont versionnés
 docs/screenshots/*.jpeg
 docs/screenshots/*.jpg
+
+# Site vitrine + doc publiée (VitePress) — build et cache
+site/.vitepress/dist/
+site/.vitepress/cache/

@@ -41,55 +41,55 @@ Les modules marqués ✔ se désactivent en une ligne de configuration s'ils ne 
 <table>
   <tr>
     <td width="25%" align="center">
-      <img src="docs/screenshots/accueil.png" alt="Page d'accueil : indicateur GO, orientation de piste avec composantes de vent, et résumé des conditions généré automatiquement" width="100%">
-      <br><sub><b>Synthèse</b> — verdict GO, piste en service, conditions</sub>
+      <img src="docs/screenshots/accueil.png" alt="Page d'accueil : indicateur GO, orientation de piste avec composantes de vent, et résumé des conditions généré automatiquement" width="100%" />
+      <br /><sub><b>Synthèse</b> — verdict GO, piste en service, conditions</sub>
     </td>
     <td width="25%" align="center">
-      <img src="docs/screenshots/notam-resume.png" alt="Page NOTAM : compteurs de NOTAMs total, nouveaux, en cours et futurs pour le périmètre VFR local" width="100%">
-      <br><sub><b>NOTAM</b> — ce qui change autour du terrain</sub>
+      <img src="docs/screenshots/notam-resume.png" alt="Page NOTAM : compteurs de NOTAMs total, nouveaux, en cours et futurs pour le périmètre VFR local" width="100%" />
+      <br /><sub><b>NOTAM</b> — ce qui change autour du terrain</sub>
     </td>
     <td width="25%" align="center">
-      <img src="docs/screenshots/performance.png" alt="Calcul de performances : distances de décollage et d'atterrissage, lecture conservatrice du manuel de vol et marge piste" width="100%">
-      <br><sub><b>Performances</b> — distances et marge piste</sub>
+      <img src="docs/screenshots/performance.png" alt="Calcul de performances : distances de décollage et d'atterrissage, lecture conservatrice du manuel de vol et marge piste" width="100%" />
+      <br /><sub><b>Performances</b> — distances et marge piste</sub>
     </td>
     <td width="25%" align="center">
-      <img src="docs/screenshots/station-actuelle.png" alt="Station météo du terrain : conditions instantanées et rose des vents superposée à l'axe de piste" width="100%">
-      <br><sub><b>Station locale</b> — rose des vents et axe de piste</sub>
+      <img src="docs/screenshots/station-actuelle.png" alt="Station météo du terrain : conditions instantanées et rose des vents superposée à l'axe de piste" width="100%" />
+      <br /><sub><b>Station locale</b> — rose des vents et axe de piste</sub>
     </td>
   </tr>
 </table>
 
 <details>
 <summary><b>Plus de captures</b> — filtrage et décodage des NOTAMs, masse &amp; centrage, historique de la station</summary>
-<br>
+<br />
 
 <table>
   <tr>
     <td width="33%" align="center">
-      <img src="docs/screenshots/notam-filtres.png" alt="Filtres NOTAM : période de validité, trafic VFR ou IFR, plage de niveaux de vol, et NOTAMs masqués par le pilote" width="100%">
-      <br><sub>Filtres : validité, trafic, niveaux de vol, masquage</sub>
+      <img src="docs/screenshots/notam-filtres.png" alt="Filtres NOTAM : période de validité, trafic VFR ou IFR, plage de niveaux de vol, et NOTAMs masqués par le pilote" width="100%" />
+      <br /><sub>Filtres : validité, trafic, niveaux de vol, masquage</sub>
     </td>
     <td width="33%" align="center">
-      <img src="docs/screenshots/notam-detail.png" alt="NOTAM détaillé : texte brut, dates de validité, champs décodés et carte de la zone concernée" width="100%">
-      <br><sub>NOTAM décodé, situé sur une carte</sub>
+      <img src="docs/screenshots/notam-detail.png" alt="NOTAM détaillé : texte brut, dates de validité, champs décodés et carte de la zone concernée" width="100%" />
+      <br /><sub>NOTAM décodé, situé sur une carte</sub>
     </td>
     <td width="33%" align="center">
-      <img src="docs/screenshots/station-graphiques.png" alt="Historique sur 24 h du vent, de la température et de l'humidité, avec signalement des périodes de brouillard" width="100%">
-      <br><sub>Historique 24 h, brouillard signalé</sub>
+      <img src="docs/screenshots/station-graphiques.png" alt="Historique sur 24 h du vent, de la température et de l'humidité, avec signalement des périodes de brouillard" width="100%" />
+      <br /><sub>Historique 24 h, brouillard signalé</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="docs/screenshots/centrage-parametres.png" alt="Chargement de l'appareil : curseurs pour le pilote, les passagers, les bagages et le carburant" width="100%">
-      <br><sub>Chargement ajusté au curseur</sub>
+      <img src="docs/screenshots/centrage-parametres.png" alt="Chargement de l'appareil : curseurs pour le pilote, les passagers, les bagages et le carburant" width="100%" />
+      <br /><sub>Chargement ajusté au curseur</sub>
     </td>
     <td align="center">
-      <img src="docs/screenshots/centrage-graphique.png" alt="Enveloppe de centrage : positions au décollage, à l'atterrissage et au carburant actuel, ici hors limites" width="100%">
-      <br><sub>Enveloppe de centrage <i>(ici un cas hors limites)</i></sub>
+      <img src="docs/screenshots/centrage-graphique.png" alt="Enveloppe de centrage : positions au décollage, à l'atterrissage et au carburant actuel, ici hors limites" width="100%" />
+      <br /><sub>Enveloppe de centrage <i>(ici un cas hors limites)</i></sub>
     </td>
     <td align="center">
-      <img src="docs/screenshots/centrage-table.png" alt="Devis de masse détaillé : masse et bras de levier de chaque poste, avec les totaux" width="100%">
-      <br><sub>Devis de masse détaillé</sub>
+      <img src="docs/screenshots/centrage-table.png" alt="Devis de masse détaillé : masse et bras de levier de chaque poste, avec les totaux" width="100%" />
+      <br /><sub>Devis de masse détaillé</sub>
     </td>
   </tr>
 </table>
