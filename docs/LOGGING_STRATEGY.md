@@ -1,4 +1,4 @@
-# Stratégie de logging - Airfield Portal
+# Stratégie de logging — Airfield Brief
 
 ## Vue d'ensemble
 

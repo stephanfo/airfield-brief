@@ -1,4 +1,4 @@
-# Charte UI — LFFI Brief
+# Charte UI — Airfield Brief
 
 Référence de cohérence visuelle dérivée du code existant. Toute nouvelle UI doit s'y conformer. En cas de doute, inspecter un composant existant avant d'inventer un pattern.
 

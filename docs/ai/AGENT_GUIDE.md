@@ -1,4 +1,4 @@
-# AGENT_GUIDE — LFFI Brief
+# AGENT_GUIDE — Airfield Brief
 
 Guide technique unique pour agents IA travaillant sur ce dépôt. Décrit les **contrats durables** et les **patterns** ; les listes exactes (stores, pages, lignes) se vérifient dans le code (`ls src/stores`, `grep`), pas ici — elles changent, ce guide non.
 
