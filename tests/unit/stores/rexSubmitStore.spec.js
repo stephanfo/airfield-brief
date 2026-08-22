@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { createPinia, setActivePinia } from 'pinia'
 import { nextTick } from 'vue'
 import { useRexSubmitStore } from '@/stores/rexSubmitStore'
@@ -110,5 +110,71 @@ describe('rexSubmitStore — marqueur de photos perdues', () => {
     expect(store.hadImagesCount).toBe(0)
     expect(store.images.length).toBe(0)
     expect(localStorage.getItem(DRAFT_KEY)).toBe(null)
+  })
+})
+
+/**
+ * Couvre le PRÉ-REMPLISSAGE date/heure : l'évènement se saisit en Zulu (UTC), et
+ * un champ date natif vide est rendu de façon trompeuse par Safari (il affiche la
+ * date du jour alors que la valeur est vide). Les deux champs partent donc remplis
+ * à l'instant courant UTC.
+ */
+describe('rexSubmitStore — pré-remplissage date/heure (UTC)', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    setActivePinia(createPinia())
+  })
+
+  it('pré-remplit date et heure à l’instant courant en UTC, pas en heure locale', () => {
+    // La suite tourne en TZ=UTC (vitest.config.js) : sans forcer un fuseau décalé,
+    // heure locale et UTC seraient identiques et le test ne prouverait rien. On
+    // simule donc Paris (UTC+2 en été) le temps du test.
+    const realTz = process.env.TZ
+    process.env.TZ = 'Europe/Paris'
+    vi.useFakeTimers()
+    // 22:30 UTC = 00:30 le LENDEMAIN à Paris : une implémentation en heure locale
+    // renverrait 2026-08-23 / 00:30 au lieu des valeurs Zulu attendues.
+    vi.setSystemTime(new Date('2026-08-22T22:30:00Z'))
+    try {
+      const store = useRexSubmitStore()
+      expect(store.form.eventDate).toBe('2026-08-22')
+      expect(store.form.eventTime).toBe('22:30')
+    } finally {
+      vi.useRealTimers()
+      process.env.TZ = realTz
+    }
+  })
+
+  it('un formulaire jamais touché n’est pas considéré comme un brouillon', () => {
+    const store = useRexSubmitStore()
+    // Lieu, date et heure sont pré-remplis : seuls les champs saisis comptent.
+    expect(store.hasDraft).toBe(false)
+    store.form.narrative = 'Le pilote saisit son récit.'
+    expect(store.hasDraft).toBe(true)
+  })
+
+  it('un brouillon restauré conserve la date saisie par le pilote', () => {
+    const store = useRexSubmitStore()
+    store.form.eventDate = '2026-07-04'
+    store.form.eventTime = '09:15'
+    store.form.narrative = 'Évènement d’un vol précédent.'
+    store.saveDraft()
+
+    // Nouvelle pinia = rechargement de page : la valeur du brouillon prime sur le défaut.
+    setActivePinia(createPinia())
+    const reloaded = useRexSubmitStore()
+    expect(reloaded.form.eventDate).toBe('2026-07-04')
+    expect(reloaded.form.eventTime).toBe('09:15')
+  })
+
+  it('resetDraft repart sur la date/heure courante, pas sur des champs vides', () => {
+    const store = useRexSubmitStore()
+    store.form.eventDate = '2026-01-01'
+    store.form.narrative = 'À effacer.'
+
+    store.resetDraft()
+    expect(store.form.eventDate).not.toBe('')
+    expect(store.form.eventTime).not.toBe('')
+    expect(store.form.narrative).toBe('')
   })
 })

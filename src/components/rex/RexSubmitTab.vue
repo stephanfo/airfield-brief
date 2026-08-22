@@ -44,23 +44,31 @@
         class="q-mb-md"
       />
 
+      <!-- Date / heure pré-remplies à l'instant courant en UTC (cf. rexSubmitStore) :
+           un REX se saisit le plus souvent le jour même. Corollaire utile : un champ
+           date natif VIDE est rendu de façon trompeuse par Safari (date du jour en
+           gris alors que `value=""`), ce que le pré-remplissage supprime de fait. -->
       <div class="row q-col-gutter-md q-mb-md">
         <div class="col-12 col-sm-6">
           <q-input
+            ref="dateRef"
             v-model="form.eventDate"
             type="date"
             label="Date de l'évènement *"
             stack-label
+            autocomplete="off"
             :rules="[(v) => !!v || 'Date obligatoire']"
           />
         </div>
         <div class="col-12 col-sm-6">
           <q-input
+            ref="timeRef"
             v-model="form.eventTime"
             type="time"
             label="Heure Zulu (UTC, approximative)"
             hint="Heure en Zulu (UTC), pas l'heure locale"
             stack-label
+            autocomplete="off"
           />
         </div>
       </div>
@@ -185,7 +193,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { Dialog, Notify } from 'quasar'
 import { useRexSubmitStore } from '../../stores/rexSubmitStore'
@@ -247,6 +255,29 @@ const { aircraftList } = storeToRefs(aircraftStore)
 
 const formRef = ref(null)
 const honeypot = ref('')
+
+// ── Filet de sécurité : valeur native non propagée ───────────────────────────
+// Garde-fou générique : si un remplissage automatique (AutoFill, extension,
+// gestionnaire de formulaires) pose une valeur dans l'input natif sans émettre
+// d'`input`, `v-model` ne la voit pas et le REX partirait sans sa date. On relit
+// donc la valeur réelle du DOM avant l'envoi.
+// NB : ce n'était PAS la cause du bug Safari « date pré-remplie » — là le champ
+// est réellement vide (`value=""`), c'est WebKit qui l'affiche rempli (cf. <style>).
+const dateRef = ref(null)
+const timeRef = ref(null)
+
+function syncNativeValue(inputRef, field) {
+  const domValue = inputRef.value?.getNativeElement?.()?.value
+  if (domValue && domValue !== form.value[field]) {
+    form.value[field] = domValue
+  }
+}
+
+// Aligne le formulaire sur ce qui est réellement affiché dans les deux champs.
+function syncDateTimeFromDom() {
+  syncNativeValue(dateRef, 'eventDate')
+  syncNativeValue(timeRef, 'eventTime')
+}
 const wantsCopy = ref(!!form.value.reporterEmail)
 
 // Décocher « recevoir une copie » doit réellement annuler l'opt-in : le champ
@@ -327,6 +358,10 @@ function resetLocalUi() {
 }
 
 async function onSubmit() {
+  // Récupère une éventuelle valeur date/heure posée par l'AutoFill Safari sans
+  // évènement : ce qui est affiché doit être ce qui part au CPS.
+  syncDateTimeFromDom()
+
   // Honeypot rempli => on ne fait rien (bot). Silencieux volontairement.
   if (honeypot.value) return
 
@@ -384,6 +419,9 @@ onMounted(async () => {
   await aircraftStore.loadAircrafts()
   // Aligne le sélecteur sur le brouillon restauré une fois la liste connue.
   syncAircraftChoice()
+  // Rattrape un AutoFill survenu au chargement (cf. syncNativeValue).
+  await nextTick()
+  syncDateTimeFromDom()
 })
 </script>
 

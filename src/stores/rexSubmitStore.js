@@ -28,13 +28,29 @@ import { STORAGE_KEYS } from '../config/storageKeys'
 
 const DRAFT_KEY = STORAGE_KEYS.REX_DRAFT
 
-/** Formulaire vierge. */
+/**
+ * Date/heure courantes en UTC, au format attendu par les inputs natifs
+ * (`YYYY-MM-DD` et `HH:mm`). L'heure de l'évènement est saisie en **Zulu (UTC)**,
+ * jamais en heure locale : on dérive donc les deux de `toISOString()`.
+ */
+function nowUtcParts() {
+  const [date, time] = new Date().toISOString().split('T')
+  return { date, time: time.slice(0, 5) }
+}
+
+/**
+ * Formulaire vierge. Date et heure sont pré-remplies à l'instant courant (UTC) :
+ * un REX se saisit le plus souvent le jour même, et un champ date natif vide est
+ * rendu de façon trompeuse par Safari (il affiche la date du jour en gris alors
+ * que la valeur est vide, cf. FEAT-033). Le pilote reste libre de les corriger.
+ */
 function emptyForm() {
+  const now = nowUtcParts()
   return {
     narrative: '',
     aircraft: '',
-    eventDate: '',
-    eventTime: '',
+    eventDate: now.date,
+    eventTime: now.time,
     place: CLUB_CONFIG.airfield.icao,
     phase: '',
     flightType: '',
@@ -63,7 +79,15 @@ export const useRexSubmitStore = defineStore('rexSubmit', () => {
   /** Timestamp d'ouverture du formulaire (time-trap anti-bot côté serveur). */
   const startedAt = ref(Date.now())
 
-  const hasDraft = computed(() => Object.values(form).some((v) => v && String(v).trim() !== ''))
+  // Un brouillon « réel » = au moins un champ saisi par le pilote. Les champs
+  // pré-remplis par défaut (lieu, date, heure) ne comptent pas : sinon un
+  // formulaire jamais touché serait signalé comme brouillon en cours.
+  const PREFILLED_FIELDS = ['place', 'eventDate', 'eventTime']
+  const hasDraft = computed(() =>
+    Object.entries(form).some(
+      ([key, v]) => !PREFILLED_FIELDS.includes(key) && v && String(v).trim() !== '',
+    ),
+  )
 
   /**
    * Vrai si le brouillon indiquait des photos mais qu'aucune n'est actuellement chargée
