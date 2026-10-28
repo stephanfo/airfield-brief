@@ -1,5 +1,7 @@
 ---
 layout: home
+title: Airfield Brief — briefing pré-vol VFR libre pour aérodrome
+titleTemplate: false
 
 hero:
   name: Airfield Brief

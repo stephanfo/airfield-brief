@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { dirname as pathDirname, resolve } from 'node:path'
+import { writeFileSync } from 'node:fs'
+import { dirname as pathDirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const dirname = pathDirname(fileURLToPath(import.meta.url))
@@ -18,6 +19,27 @@ const siteUrl = (
 // Lien vers un fichier du dépôt (racine hors srcDir : README, CONTRIBUTING, LICENSE).
 const repo = 'https://github.com/stephanfo/airfield-brief'
 const ghBlob = (p) => `${repo}/blob/main/${p}`
+
+// L'auteur, tel que le décrit son site personnel : les moteurs relient ainsi ce projet à la
+// même personne que les autres (même @id dans chaque JSON-LD).
+const auteur = 'https://stephane.ratelet.fr/'
+
+// Fiche du logiciel pour les moteurs de recherche, sur la page d'accueil seulement.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Airfield Brief',
+  description:
+    'Briefing pré-vol VFR d’un aérodrome sur un seul écran : météo, NOTAM, AZBA, masse et centrage.',
+  url: `${siteUrl}${base}`,
+  sameAs: repo,
+  image: `${siteUrl}${base}og-image.png`,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  isAccessibleForFree: true,
+  license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+  author: { '@type': 'Person', '@id': `${auteur}#me`, name: 'Stéphane Ratelet', url: auteur },
+}
 
 export default defineConfig({
   // Le site est un projet npm distinct de l'application. Sans ces deux réglages,
@@ -60,6 +82,33 @@ export default defineConfig({
     ['meta', { property: 'og:locale', content: 'fr_FR' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
   ],
+
+  sitemap: { hostname: `${siteUrl}${base}` },
+
+  // Adresse canonique et aperçu de partage propres à chaque page (sans cela, toutes les pages
+  // partagent le titre et l'image du site, sans og:url ni og:title).
+  transformHead: ({ pageData, title, description }) => {
+    const chemin = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '')
+    const url = `${siteUrl}${base}${chemin}`
+    const tetes = [
+      ['link', { rel: 'canonical', href: url }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+    ]
+    if (pageData.relativePath === 'index.md') {
+      tetes.push(['script', { type: 'application/ld+json' }, JSON.stringify(jsonLd)])
+    }
+    return tetes
+  },
+
+  // robots.txt annonce le sitemap ; écrit ici pour suivre `siteUrl` et `base`.
+  buildEnd: ({ outDir }) => {
+    writeFileSync(
+      join(outDir, 'robots.txt'),
+      `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}${base}sitemap.xml\n`,
+    )
+  },
 
   themeConfig: {
     outline: { level: [2, 3], label: 'Sur cette page' },
@@ -127,7 +176,7 @@ export default defineConfig({
     footer: {
       message:
         'Sous licence AGPL-3.0. Aide à la préparation du vol — ne remplace pas le briefing officiel.',
-      copyright: `© ${new Date().getFullYear()} Stephanfo`,
+      copyright: `© ${new Date().getFullYear()} <a href="${auteur}">Stéphane Ratelet</a>`,
     },
   },
 })
