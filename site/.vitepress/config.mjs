@@ -24,6 +24,24 @@ const ghBlob = (p) => `${repo}/blob/main/${p}`
 // même personne que les autres (même @id dans chaque JSON-LD).
 const auteur = 'https://stephane.ratelet.fr/'
 
+// Description propre aux pages principales : sans elle, toutes reprennent celle du site et
+// s'affichent avec la même phrase dans les résultats de recherche. Tenue ici plutôt qu'en
+// frontmatter, que GitHub afficherait en tableau en tête de chaque document.
+const descriptions = {
+  'demarrage.md':
+    "Essayer Airfield Brief en local avec des données d'exemple, puis l'adapter à son aérodrome.",
+  'DEPLOYMENT.md':
+    'Mettre Airfield Brief en production : application statique, un hébergement mutualisé Apache suffit, sans serveur applicatif.',
+  'ARCHITECTURE.md':
+    "Architecture technique d'Airfield Brief : Vue 3, Quasar et Pinia, flux de données, stores et schémas des fichiers JSON.",
+  'DATA_PIPELINE.md':
+    "Le contrat entre Airfield Brief et son pipeline de données : fichiers JSON statiques, sans backend ni base de données.",
+  'ROADMAP.md':
+    "Feuille de route d'Airfield Brief : les grandes directions du projet et ce qui reste hors de son périmètre.",
+  'NOTIFICATIONS.md':
+    "Notifications push d'Airfield Brief avec Firebase Cloud Messaging : configuration, fonctionnement et dépannage. Module optionnel.",
+}
+
 // Fiche du logiciel pour les moteurs de recherche, sur la page d'accueil seulement.
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -84,6 +102,15 @@ export default defineConfig({
   ],
 
   sitemap: { hostname: `${siteUrl}${base}` },
+
+  // Les titres de la documentation finissent souvent par « — Airfield Brief », que le gabarit
+  // ajoute déjà : on l'ôte du <title> (le h1 de la page n'est pas touché).
+  transformPageData: (pageData) => ({
+    title: pageData.title.replace(/\s+—\s+Airfield Brief$/, ''),
+    ...(descriptions[pageData.relativePath] && {
+      description: descriptions[pageData.relativePath],
+    }),
+  }),
 
   // Adresse canonique et aperçu de partage propres à chaque page (sans cela, toutes les pages
   // partagent le titre et l'image du site, sans og:url ni og:title).
